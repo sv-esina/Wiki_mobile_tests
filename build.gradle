@@ -60,3 +60,22 @@ tasks.withType(Test) {
         }
     }
 }
+
+
+task remote_test(type: Test) {
+    useJUnitPlatform {
+        testClassesDirs = sourceSets.test.output.classesDirs
+        classpath = sourceSets.test.runtimeClasspath
+        systemProperty "host", "browserstack"
+        includeTags("browserstack")
+    }
+}
+
+task local_test(type: Test) {
+    useJUnitPlatform {
+        testClassesDirs = sourceSets.test.output.classesDirs
+        classpath = sourceSets.test.runtimeClasspath
+        systemProperty "host", "local"
+        includeTags("local")
+    }
+}

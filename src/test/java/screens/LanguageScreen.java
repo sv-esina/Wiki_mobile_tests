@@ -1,37 +1,51 @@
 package screens;
 
 import com.codeborne.selenide.ElementsCollection;
+import com.codeborne.selenide.SelenideElement;
 import io.qameta.allure.Step;
 
 import static com.codeborne.selenide.Condition.text;
-import static com.codeborne.selenide.Condition.visible;
+import static com.codeborne.selenide.Selectors.byClassName;
+import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.$$;
+import static data.TestData.LANGUAGE;
+import static io.appium.java_client.AppiumBy.androidUIAutomator;
 import static io.appium.java_client.AppiumBy.id;
 import static org.openqa.selenium.By.className;
 
 public class LanguageScreen {
 
+    public static String host = System.getProperty("host");
+
+    private final SelenideElement
+            addLanguageButton = $(androidUIAutomator("new UiSelector().text(\"Add language\")")),
+            addedLanguage = $(androidUIAutomator("new UiSelector().text(\"Deutsch\")"));
+
     private final ElementsCollection
             languageList = $$(className("android.widget.TextView")),
             languageName = $$((id("org.wikipedia.alpha:id/localized_language_name"))),
-            checkLanguageText = $$(className("android.widget.TextView"));
+            chooseLanguage = $$(byClassName("android.view.View"));
 
-    @Step("Кликаем на иконку 'Wikipedia languages'")
-    public LanguageScreen languageListClick() {
-        languageList.findBy(text("Wikipedia language")).click();
+    @Step("Открываем в список языков")
+    public LanguageScreen clickAddLanguageList() {
+        if(host.equals("local")){
+            addLanguageButton.click();}
+        else {languageList.findBy(text("Wikipedia language")).click();}
         return this;
 
     }
 
     @Step("Выбираем нужный язык текста")
-    public LanguageScreen selectLanguage(String value) {
-        languageName.findBy(text(value)).click();
+    public LanguageScreen selectLanguage() {
+        if(host.equals("local")){
+            chooseLanguage.get(3).click();}
+        else {languageName.findBy(text(LANGUAGE)).click();}
         return this;
     }
 
-    @Step("Проверяем смену языка")
-    public LanguageScreen checkLanguage(String value) {
-        checkLanguageText.findBy(text(value)).shouldBe(visible);
+    @Step("Проверяем добавленную запись")
+    public LanguageScreen checkAddedLanguage() {
+        addedLanguage.shouldHave(text(LANGUAGE));
         return this;
     }
 

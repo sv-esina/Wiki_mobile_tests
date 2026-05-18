@@ -7,15 +7,13 @@ import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import screens.LanguageScreen;
+import screens.SearchScreen;
 import screens.SettingsScreen;
-import screens.WikiSearchScreen;
-
-import static data.TestData.LANGUAGE;
 
 @DisplayName("Тестирование приложения Wikipedia удаленно, используя Browserstack")
 public class WikiSearchBrowserstackTests extends TestBase {
 
-    WikiSearchScreen searchScreen = new WikiSearchScreen();
+    SearchScreen searchScreen = new SearchScreen();
     LanguageScreen languageScreen = new LanguageScreen();
     SettingsScreen settingsScreen = new SettingsScreen();
 
@@ -32,16 +30,30 @@ public class WikiSearchBrowserstackTests extends TestBase {
 
     @Test
     @Tag("browserstack")
-    @Severity(SeverityLevel.NORMAL)
-    @Story("Выдавать ошибку в случае неудачной загрузки страницы")
-    @DisplayName("Проверка ошибки при открытии первого в списке результата поиска")
-    public void chooseFirstSearchResultTest() {
-        searchScreen.searchClick()
+    @Severity(SeverityLevel.BLOCKER)
+    @Story("Выводить список результатов по запросу")
+    @DisplayName("Успешный переход в первый результат поискового запроса")
+    void successfulSearchFirstResultTest() {
+        searchScreen.skipStartScreen()
+                .searchClick()
                 .enterSearchValue()
                 .checkSearchResult()
                 .clickFirstSearchResult()
-                .checkErrorIcon()
-                .checkErrorText();
+                .checkTitleFirstSearchResult();
+    }
+
+    @Test
+    @Tag("browserstack")
+    @Severity(SeverityLevel.NORMAL)
+    @Story("Выводить список результатов по запросу")
+    @DisplayName("Просмотр списка предыдущих поисковых запросов")
+    void checkRecentSearchesTest() {
+        searchScreen.skipStartScreen()
+                .searchClick()
+                .enterSearchValue()
+                .checkSearchResult()
+                .clearSearchField()
+                .checkRecentSearch();
     }
 
     @Test
@@ -52,10 +64,12 @@ public class WikiSearchBrowserstackTests extends TestBase {
     void languageSettingTest() {
         settingsScreen.clickNavigationButton()
                 .clickSettingsButton();
-        languageScreen.languageListClick()
-                .selectLanguage(LANGUAGE)
-                .checkLanguage(LANGUAGE);
+        languageScreen.clickAddLanguageList()
+                .selectLanguage()
+                .checkAddedLanguage();
 
     }
+
+
 
 }
