@@ -14,7 +14,7 @@ import static io.appium.java_client.AppiumBy.accessibilityId;
 import static io.appium.java_client.AppiumBy.androidUIAutomator;
 
 public class SearchScreen {
-    public static String host = System.getProperty("host");
+    public static String tag = System.getProperty("tag");
 
     private final SelenideElement
                         container = $(AppiumBy.id("org.wikipedia.alpha:id/dialogContainer")),
@@ -81,7 +81,7 @@ public class SearchScreen {
 
     @Step("Проверяем наличие строки предыдущего запроса")
     public SearchScreen checkRecentSearch() {
-        if(host.equals("local")){
+        if(tag.equals("local")){
             recentSearch.shouldHave(text(RECENT_SEARCHES));
             titleText.shouldHave(text(SEARCH_TOPIC));}
         else {searchPanelRecent.shouldBe(visible);}

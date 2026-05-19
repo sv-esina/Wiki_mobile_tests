@@ -1,5 +1,6 @@
 package tests;
 
+import io.qameta.allure.Owner;
 import io.qameta.allure.Severity;
 import io.qameta.allure.SeverityLevel;
 import io.qameta.allure.Story;
@@ -10,6 +11,7 @@ import screens.LanguageScreen;
 import screens.SearchScreen;
 import screens.SettingsScreen;
 
+@Owner("Esina Svetlana")
 @DisplayName("Тестирование приложения Wikipedia удаленно, используя Browserstack")
 public class WikiSearchBrowserstackTests extends TestBase {
 
@@ -23,7 +25,8 @@ public class WikiSearchBrowserstackTests extends TestBase {
     @Story("Выводить список результатов по запросу")
     @DisplayName("Успешное отображение результатов поиска")
     public void successfulWikiSearchTest() {
-        searchScreen.searchClick()
+        searchScreen.skipStartScreen()
+                .searchClick()
                 .enterSearchValue()
                 .checkSearchResult();
     }
@@ -58,7 +61,7 @@ public class WikiSearchBrowserstackTests extends TestBase {
 
     @Test
     @Tag("browserstack")
-    @Severity(SeverityLevel.BLOCKER)
+    @Severity(SeverityLevel.CRITICAL)
     @Story("Реализовать возможность смены языка в настроках Wikipedia")
     @DisplayName("Смена языковой настройки")
     void languageSettingTest() {

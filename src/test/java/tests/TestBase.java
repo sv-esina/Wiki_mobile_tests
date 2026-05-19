@@ -16,11 +16,11 @@ import static com.codeborne.selenide.Selenide.open;
 
 public class TestBase {
 
-    public static String host = System.getProperty("host");
+    public static String tag = System.getProperty("tag");
 
     @BeforeAll
     static void beforeAll() {
-        switch (host) {
+        switch (tag) {
             case "browserstack":
                 Configuration.browser = BrowserstackDriver.class.getName();
                 break;
@@ -41,7 +41,7 @@ public class TestBase {
 
     @AfterEach
     void addAttachments() {
-        switch (host) {
+        switch (tag) {
             case "browserstack":
                 String sessionId = Selenide.sessionId().toString();
                 Attach.pageSource();
@@ -50,7 +50,7 @@ public class TestBase {
                 break;
 
             case "local":
-                Attach.screenshotAs("Last screenshot");
+                Attach.screenshotAs();
                 Attach.pageSource();
                 closeWebDriver();
         }

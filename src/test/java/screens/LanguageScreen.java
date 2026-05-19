@@ -15,7 +15,7 @@ import static org.openqa.selenium.By.className;
 
 public class LanguageScreen {
 
-    public static String host = System.getProperty("host");
+    public static String tag = System.getProperty("tag");
 
     private final SelenideElement
             addLanguageButton = $(androidUIAutomator("new UiSelector().text(\"Add language\")")),
@@ -28,7 +28,7 @@ public class LanguageScreen {
 
     @Step("Открываем в список языков")
     public LanguageScreen clickAddLanguageList() {
-        if(host.equals("local")){
+        if(tag.equals("local")){
             addLanguageButton.click();}
         else {languageList.findBy(text("Wikipedia language")).click();}
         return this;
@@ -37,7 +37,7 @@ public class LanguageScreen {
 
     @Step("Выбираем нужный язык текста")
     public LanguageScreen selectLanguage() {
-        if(host.equals("local")){
+        if(tag.equals("local")){
             chooseLanguage.get(3).click();}
         else {languageName.findBy(text(LANGUAGE)).click();}
         return this;

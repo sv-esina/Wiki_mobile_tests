@@ -10,12 +10,12 @@ import static com.codeborne.selenide.WebDriverRunner.getWebDriver;
 
 public class Attach {
 
-    @Attachment(value = "{attachName}", type = "image/png")
-    public static byte[] screenshotAs(String attachName) {
+    @Attachment(value = "Last local screenshot", type = "image/png")
+    public static byte[] screenshotAs() {
         return ((TakesScreenshot) getWebDriver()).getScreenshotAs(OutputType.BYTES);
     }
 
-    @Attachment(value = "Page source", type = "text/plain")
+        @Attachment(value = "Page source", type = "text/plain")
     public static byte[] pageSource() {
         return getWebDriver().getPageSource().getBytes(StandardCharsets.UTF_8);
     }

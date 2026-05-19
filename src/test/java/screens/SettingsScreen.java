@@ -7,11 +7,12 @@ import io.qameta.allure.Step;
 import static com.codeborne.selenide.Condition.visible;
 import static com.codeborne.selenide.Selenide.$;
 import static io.appium.java_client.AppiumBy.id;
+import static tests.TestBase.tag;
 
 public class SettingsScreen {
 
 
-    public static String host = System.getProperty("host");
+    public static String tag = System.getProperty("tag");
 
     private final SelenideElement
             messageWiki = $(AppiumBy.id("android:id/message")),
@@ -31,7 +32,7 @@ public class SettingsScreen {
 
     @Step("Нажимаем на кнопку 'Settings'")
     public SettingsScreen clickSettingsButton() {
-        if(host.equals("local")){
+        if(tag.equals("local")){
             languageButton.click();}
         else {settingButton.click();}
         return this;
