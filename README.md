@@ -2,7 +2,7 @@
   <img src="media/icons/wikipedia_png.png" width="500" height="90"/>
 </p>
 
-<h1 align="center">Демо-проект по автоматизации тестовых сценариев для сайта <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> 
+<h1 align="center">Демо-проект по автоматизации тестовых сценариев для мобильного приложения <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> 
 </h1>
 
 ---
