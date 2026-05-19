@@ -9,6 +9,8 @@
 ## :clipboard: Содержание:
 
 - [Технологии и инструменты](#технологии-и-инструменты)
+- [Запуск автотестов](#запуск-автотестов)
+- [Отслеживание в Browserstack](#отслеживание-удаленного-запуска-тестов-в-browserstack)
 - [Сборка в Jenkins](#сборка-в-jenkins)
 - [Allure-отчет](#allure-отчет)
     - [Overview](#overview)
@@ -71,6 +73,8 @@
 - - Удалённо: облачная платформа [Browserstack](https://app-automate.browserstack.com/dashboard/v2/quick-start/setup-browserstack-sdk).
 - Реализовано формирование [Allure-отчета](https://jenkins.autotests.cloud/view/java_students/job/SvetlanaV_Esina-Jenkins_first-project/26/allure/) с отправкой результатов прогона тестов в <code>Telegram</code> при помощи бота.
 - В проекте так же задействована интеграция с [Allure TestOps](https://qameta.io/) и [Jira](https://www.atlassian.com/software/jira).
+
+---
 
 ## Запуск автотестов
 
