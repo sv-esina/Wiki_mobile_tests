@@ -1,8 +1,9 @@
-# Проект по автоматизации тестирования мобильного приложения [Wikipedia](https://www.wikipedia.org/)
-
 <p align="center">
   <img src="media/icons/wikipedia_png.png" width="500" height="90"/>
 </p>
+
+<h1 align="center">Демо-проект по автоматизации тестовых сценариев для сайта <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> 
+</h1>
 
 ---
 ## :clipboard: Содержание:
@@ -49,15 +50,15 @@
     <a href="https://www.atlassian.com/software/jira">
         <img width="5%" title="Jira" src="media/icons/Jira.svg"></a>
     <a href="https://developer.android.com">
-        <img width="6%" title="Android" src="images/icons/android-original.svg"></a>
+        <img width="6%" title="Android" src="media/icons/android-original.svg"></a>
     <a href="https://developer.android.com/studio">
-        <img width="6%" title="Android Studio" src="images/icons/androidstudio-original.svg"></a>
+        <img width="6%" title="Android Studio" src="media/icons/androidstudio-original.svg"></a>
     <a href="https://appium.io">
-        <img width="5%" title="Appium" src="images/icons/appium.png"></a>
+        <img width="5%" title="Appium" src="media/icons/appium.png"></a>
     <a href="https://appium.io/docs/en/latest/quickstart/install/">
-        <img width="6%" title="Appium Inspector" src="images/icons/appium_server.png"></a>
+        <img width="6%" title="Appium Inspector" src="media/icons/appium_server.png"></a>
     <a href="https://www.browserstack.com">
-        <img width="5%" title="Browserstack" src="images/icons/browserstack-original.svg"></a>
+        <img width="5%" title="Browserstack" src="media/icons/browserstack-original.svg"></a>
 </p>
 
 - В данном проекте представлены автоматизированные мобильный тесты, разработанные на языке <code>Java</code> с использованием фреймворка <code>Selenide</code>.
@@ -106,10 +107,19 @@ remote_test
 
 ---
 
+## Отслеживание удаленного запуска тестов в Browserstack
+
+![browserstack.png](media/screenshots/browserstack.png)
+
+---
+
 ## **Сборка в Jenkins:**
+
+![Jenkins - main.png](media/screenshots/Jenkins%20-%20main.png)
+
 >Запуск сборки осуществляется через раздел `Build with Parameters` путём нажатия кнопки `Build`
 
-![Jenkins_build.png](media/screenshots/Jenkins_build.png)
+![Jenkins-Build.png](media/screenshots/Jenkins-Build.png)
 
 ---
 
@@ -122,12 +132,12 @@ remote_test
 - <code>SUITES</code>: Распределение результатов тестов по тестовым наборам (пакетам).
 - <code>ENVIRONMENT</code>: Информация о тестовом окружении, на котором запускались тесты (версия браузера, ОС, URL стенда и т.д.).
 
-![Allure_report.png](media/screenshots/Allure_report.png)
+![AllureReport-Overview (2).png](media/screenshots/AllureReport-Overview%20%282%29.png)
 
 ### Детализация отчета
 > Для детального анализа прохождения тестов используется раздел Suites, где тесты отображаются в виде иерархического дерева, что помогает лучше ориентироваться в результатах.
 
-![Allure_report_steps.png](media/screenshots/Allure_report_steps.png)
+![AllureReport-Suites (2).png](media/screenshots/AllureReport-Suites%20%282%29.png)
 
 ---
 
@@ -142,12 +152,17 @@ https://github.com/user-attachments/assets/cc4d25b8-a932-41a3-aa17-5328233a6082
 ### Дашборд
 > Результат и статистика выполнения автотестов отображается в разделе Dashboard.
 
-![TestOpsDashboard.png](media/screenshots/TestOpsDashboard.png)
+![TestOps-dashboard.png](media/screenshots/TestOps-dashboard.png)
 
 ### Тест-кейсы
 > В разеделе Тест-кейсы представлен список автоматизированных и ручных тестов, реализованных в рамках проекта
 
-![TestOps.png](media/screenshots/TestOps.png)
+![TestOps-testCases.png](media/screenshots/TestOps-testCases.png)
+
+### Запуски
+>В разеделе Запуски имеется возможность детального просмотра и анализа прогона тестов
+
+![TestOps-builds.png](media/screenshots/TestOps-builds.png)
 
 ---
 
@@ -155,7 +170,9 @@ https://github.com/user-attachments/assets/cc4d25b8-a932-41a3-aa17-5328233a6082
 
 > Реализована интеграция Allure TestOps с Jira. В задаче отображен список связанных тестов и результаты их прогонов.
 
-![Jira.png](media/screenshots/Jira.png)
+![Jira-wiki-tests.png](media/screenshots/Jira-wiki-tests.png)
+
+![Jira-wiki-launches.png](media/screenshots/Jira-wiki-launches.png)
 
 ---
 
@@ -163,4 +180,4 @@ https://github.com/user-attachments/assets/cc4d25b8-a932-41a3-aa17-5328233a6082
 > По завершению сборки в чат Telegram автоматически направляется уведомление с результатом прогона тестов.
 > Из уведомления возможен переход в Allure Report по указанной ссылке.
 
-<img width="50%" title="TelegramBot" src="media/screenshots/TelegramBot.png">
+<img width="50%" title="TelegramBot" src="media/screenshots/Telegram-wiki.png">

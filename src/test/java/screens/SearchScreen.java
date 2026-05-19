@@ -62,7 +62,7 @@ public class SearchScreen {
         return this;
     }
 
-    @Step("Нажимаем на первый результат поиска")
+    @Step("Проверяем title страницы")
     public SearchScreen checkTitleFirstSearchResult() {
         if (messageWiki.is(visible)) {
             closeMessageWiki.click();}
