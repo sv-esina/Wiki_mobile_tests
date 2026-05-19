@@ -144,7 +144,7 @@ remote_test
 ## **Видео выполнения автотеста:**
 > К каждому тесту в отчете прилагается видео:
 
-https://github.com/user-attachments/assets/cc4d25b8-a932-41a3-aa17-5328233a6082
+https://github.com/user-attachments/assets/3c34f7a2-81ba-446e-8e60-e9fa87ea6d01
 
 ---
 
