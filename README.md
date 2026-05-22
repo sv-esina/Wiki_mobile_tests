@@ -118,7 +118,7 @@ remote_test
 
 ---
 
-## **Сборка в Jenkins:**
+## **Сборка в [Jenkins](https://jenkins.autotests.cloud/view/java_students/job/Esina-WikiMobile-Project/)**
 
 ![Jenkins - main.png](media/screenshots/Jenkins%20-%20main.png)
 
@@ -128,7 +128,7 @@ remote_test
 
 ---
 
-## **Allure-отчет:**
+## **[Allure-отчет](https://jenkins.autotests.cloud/view/java_students/job/Esina-WikiMobile-Project/4/allure/)**
 ### Overview
 
 > Главная страница отчета, которая содержит общую информацию о прохождении тестов:
@@ -153,7 +153,7 @@ https://github.com/user-attachments/assets/3c34f7a2-81ba-446e-8e60-e9fa87ea6d01
 
 ---
 
-## **Интеграция с Allure TestOps:**
+## **Интеграция с Allure [TestOps](https://allure.autotests.cloud/project/5207/test-cases/44368?treeId=10181)**
 ### Дашборд
 > Результат и статистика выполнения автотестов отображается в разделе Dashboard.
 
@@ -167,11 +167,13 @@ https://github.com/user-attachments/assets/3c34f7a2-81ba-446e-8e60-e9fa87ea6d01
 ### Запуски
 >В разеделе Запуски имеется возможность детального просмотра и анализа прогона тестов
 
+![Wiki запуски.png](media/screenshots/Wiki%20%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B8.png)
+
 ![TestOps-builds.png](media/screenshots/TestOps-builds.png)
 
 ---
 
-## **Интеграция с Jira:**
+## **Интеграция с [Jira](https://jira.autotests.cloud/browse/HOMEWORK-1605)**
 
 > Реализована интеграция Allure TestOps с Jira. В задаче отображен список связанных тестов и результаты их прогонов.
 
